@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  #ユーザー側ルーティング
+  root to: 'homes#top'
+  get '/about' => 'homes#about', as: 'about'
+  resources :shops
+  resources :posts
+  
+  #オーナー側ルーティング
+  devise_for :owners
 end

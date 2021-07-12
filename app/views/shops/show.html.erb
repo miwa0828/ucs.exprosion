@@ -1,0 +1,10 @@
+    <%= render 'shares/post', post: @post %>
+    
+    <% @shops.each do |shop| %>                    
+      <%= shop.name %>
+      <%= shop.detail %>
+      <%= shop.address %>
+      <%= shop.phone_number %>
+      <%= shop.shop_image %>
+      <%= shop.hp_url %>
+    <% end %>
