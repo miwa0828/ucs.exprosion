@@ -1,0 +1,10 @@
+<h2>新着情報編集<h2>
+
+  <%= form_with model:@post, url: posts_path, local:true do |f| %>
+    <%= f.label :title,'タイトル名' %>
+      <%= f.text_field :title %>
+    <%= f.label :detail,'投稿詳細' %>
+      <%= f.text_field :detail %>
+    <%= f.label :image,'イメージ画像' %>
+      <%= f.attachment_field :image %>
+  <% end %>

@@ -1,0 +1,11 @@
+      <% @shop.each do |shop| %>
+        <%= shop.name %>
+        <%= shop.detail %>
+        <%= shop.address %>
+        <%= shop.open_time %>
+        <%= shop.close_time %>
+        <%= shop.phone_number %>
+        <%= shop.image %>
+        <%= shop.url %>
+        <%= link_to "編集", edit_shop_path(current_owner.id) %>>
+      <% end %>

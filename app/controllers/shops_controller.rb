@@ -1,4 +1,6 @@
 class ShopsController < ApplicationController
+  before_action :authenticate_owner!, except: [:show]
+
   def index
     @shop = Shop.all
   end
@@ -12,6 +14,10 @@ class ShopsController < ApplicationController
     @shop = Shop.new
   end
 
+  def edit
+    @shop = Shop.find_by(owner_id: params[:id])
+  end
+
   def create
     shop = Shop.new(shop_params)
     shop.owner_id = current_owner.id
@@ -19,6 +25,11 @@ class ShopsController < ApplicationController
     redirect_to shops_path
   end
 
+  def update
+    shop = Shop.find(params[:id])
+    shop.update(shop_params)
+    redirect_to shops_path
+  end
   private
   def shop_params
     params.require(:shop).permit(:name, :detail, :address, :phone_number, :image, :url)

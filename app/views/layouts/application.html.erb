@@ -10,44 +10,16 @@
   </head>
 
   <body>
-    <% if owner_signed_in? %>
-      <li>
-        <%= link_to 'HOME', new_shop_path %>
-      </li>
-      <li>
-        <%= link_to 'PROFILE', root_path %>
-      </li>
-      <li>
-        <%= link_to 'SHOP', shops_path %>
-      </li>
-      <li>
-        <%= link_to 'POST', root_path %>
-      </li>
-      <li>
-        <%= link_to "LOGOUT", destroy_owner_session_path, method: :delete %>
-      </li>
-    <% else %>
-      <li>
-        <%= link_to 'HOME', root_path %>
-      </li>
-      <li>
-        <%= link_to 'ABOUT', about_path %>
-      </li>
-      <li>
-        <%#= link_to 'SHOP', shop_path(shop.id) %>
-      </li>
-      <li>
-        <%= link_to "SIGN UP", new_owner_registration_path %>
-      </li>
-      <li>
-        <%= link_to "LOGIN", new_owner_session_path %>
-      </li>
-    <% end %>
+      <!--ヘッダー-->
+
+    <header>
+      <%= render 'layouts/header' %>
+    </header>
+
     <%= yield %>
-      <div class='mx-auto text-center'>
-        <footer>
-          <p>Copyright Takumi.Miwa All right Reserved.</p>
-        </footer>
-      </div>
+      <!--フッター-->
+    <footer>  <!--位置はapplication.csccで修正できます-->
+      <%= render 'layouts/footer' %>
+    </footer>
   </body>
 </html>

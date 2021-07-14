@@ -10,16 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_11_100940) do
-
-  create_table "new_posts", force: :cascade do |t|
-    t.string "title"
-    t.text "detail"
-    t.string "image"
-    t.datetime "created_at", null: false
-    t.datetime "update_at"
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 2021_07_14_050012) do
 
   create_table "owners", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -34,6 +25,15 @@ ActiveRecord::Schema.define(version: 2021_07_11_100940) do
     t.index ["reset_password_token"], name: "index_owners_on_reset_password_token", unique: true
   end
 
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.text "detail"
+    t.string "image_id"
+    t.datetime "created_at", null: false
+    t.datetime "update_at"
+    t.datetime "updated_at", null: false
+  end
+
   create_table "shops", force: :cascade do |t|
     t.string "name"
     t.text "detail"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2021_07_11_100940) do
     t.datetime "created_at", null: false
     t.datetime "update_at"
     t.datetime "updated_at", null: false
+    t.integer "owner_id"
   end
 
 end

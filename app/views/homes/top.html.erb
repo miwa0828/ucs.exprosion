@@ -3,16 +3,18 @@
         古着屋のオーナーの方はお店の情報登録、イベント情報の告知ができます。<br>
         お店の情報登録、イベント情報の告知には会員登録が必要になります。<br>
       </p>
-
-      <%= render 'shares/post', post: @post %>
-
-      <h2>古着屋さん</h2>
-      
-      <% @shop.each do |shop| %>
-        <%= shop.shop_name %>
-        <%= shop.shopp_detail %>
-        <%= link to 'more', shop_path(shop.id) %>
-      <% end %>
-
-
-
+      <div class="container">  <!-- この行を追加 -->
+        <div class="row">
+            <div class="col-lg-4">
+              <%= render 'shares/post', post: @post %>
+            </div>
+            <div class="col-lg-8">
+              <h2>古着屋さん</h2>
+                <% @shop.each do |shop| %>
+                  <%= shop.name %>
+                  <%= shop.detail %>
+                  <%= link_to 'more', shop_path(shop.id) %>
+                <% end %>
+            </div>
+        </div>
+      </div>
