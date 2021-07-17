@@ -1,20 +1,49 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col align-self-center'>
+      <!-- サンプルで画像を挿入しました -->
+      <div id="carouselExampleIndicators" class="carousel slide　text-center" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <%= image_tag "clark-street-mercantile-qnKhZJPKFD8-unsplash.jpg", width: '570px', height: '370px' %>
+          </div>
+          <div class="carousel-item">
+            <%= image_tag "nordwood-themes-Nv4QHkTVEaI-unsplash.jpg", width: '570px', height: '370px' %>
+          </div>
+          <div class="carousel-item">
+            <%= image_tag "junko-nakase-Q-72wa9-7Dg-unsplash.jpg", width: '570px', height: '370px' %>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
       <p class='text-center'
         このサイトは東海地方を中心に古着屋さんを紹介しているサイトです。<br>
         古着屋のオーナーの方はお店の情報登録、イベント情報の告知ができます。<br>
         お店の情報登録、イベント情報の告知には会員登録が必要になります。<br>
       </p>
-      <div class="container">  <!-- この行を追加 -->
+
+      <div class="container">
         <div class="row">
-            <div class="col-lg-4">
-              <%= render 'shares/post', post: @post %>
-            </div>
-            <div class="col-lg-8">
-              <h2>古着屋さん</h2>
-                <% @shop.each do |shop| %>
-                  <%= shop.name %>
-                  <%= shop.detail %>
-                  <%= link_to 'more', shop_path(shop.id) %>
-                <% end %>
-            </div>
+          <!-- 新着情報一覧 -->
+          <%= render 'shares/post', post: @post %>
+          <!-- 古着屋一覧 -->
+          <%= render 'shares/shop', shop: @shop %>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+

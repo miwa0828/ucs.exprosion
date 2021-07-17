@@ -3,6 +3,7 @@ class ShopsController < ApplicationController
 
   def index
     @shop = Shop.all
+    @post = Post.all
   end
 
   def show
@@ -30,6 +31,13 @@ class ShopsController < ApplicationController
     shop.update(shop_params)
     redirect_to shops_path
   end
+
+  def destroy
+    shop = Shop.find(params[:id])
+    shop.destroy
+    redirect_to shops_path
+  end
+
   private
   def shop_params
     params.require(:shop).permit(:name, :detail, :address, :phone_number, :image, :url)

@@ -1,21 +1,17 @@
-<h1>ショップ編集</h1>
+<h1>Update your profile</h1>
 
-    <%= form_with model:@shop, url: edit_shop_path(shop.id), local:true do |f| %>
-    <%= f.label :name,'ショップ名' %>
+    <%= form_with model:@owner do |f| %>
+      <%= f.label :name %>
       <%= f.text_field :name %>
-    <%= f.label :detail,'ショップ詳細' %>
-      <%= f.text_field :detail %>
-    <%= f.label :address,'住所' %>
-      <%= f.text_field :address %>
-    <%= f.label :open_time,'営業開始時間' %>
-      <%= f.text_field :open_time %>
-    <%= f.label :close_time,'営業終了時間' %>
-      <%= f.text_field :close_time %>
-    <%= f.label :phone_number,'電話番号' %>
-      <%= f.text_field :phone_number %>
-    <%= f.label :image,'イメージ画像' %>
-      <%= f.attachment_field :image %>
-    <%= f.label :url,'URL' %>
-      <%= f.text_field :url %>
-    <%= f.submit '保存する' %>
-<% end %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "Save changes", class: "btn btn-primary" %>
+    <% end %>

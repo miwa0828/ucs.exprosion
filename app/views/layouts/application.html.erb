@@ -11,14 +11,13 @@
 
   <body>
       <!--ヘッダー-->
-
     <header>
       <%= render 'layouts/header' %>
     </header>
 
     <%= yield %>
       <!--フッター-->
-    <footer>  <!--位置はapplication.csccで修正できます-->
+    <footer class="fixed-bottom">
       <%= render 'layouts/footer' %>
     </footer>
   </body>

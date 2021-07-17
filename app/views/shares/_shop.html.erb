@@ -1,0 +1,22 @@
+<div class='col-lg-8'>
+  <div classs = "row">
+    <div class='col-lg-10'>
+      <table class='table border-bottom'>
+        <thead class="thead-dark">
+            <tr>
+              <th class='text-center'>古着屋</th>
+            </tr>
+        </thead>
+                <% @shop.each do |shop| %>
+                  <tbody>
+                    <tr>
+                      <td><%= shop.name %><td>
+                      <td><%= shop.detail %></td>
+                      <td><%= link_to 'more', shop_path(shop.id) %></td>
+                    </tr>
+                  </tbody>
+                <% end %>
+      </table>
+    </div>
+  </div>
+</div>

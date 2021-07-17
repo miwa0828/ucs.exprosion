@@ -11,5 +11,9 @@ Rails.application.routes.draw do
   }
     resources :owners
     resources :shops
-   resources :posts
+    resources :posts
+
+    patch '/posts/withdraw' => 'posts#withdraw'                       #新着情報ー更新
+    patch '/shops/withdraw' => 'shops#withdraw'                       #ショップ情報ー更新
+
 end
