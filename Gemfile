@@ -71,3 +71,8 @@ gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
+
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
