@@ -1,17 +1,60 @@
-<h1>Update your profile</h1>
+<div class="container">
 
-    <%= form_with model:@owner do |f| %>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+  <div class="row">
+    <div class="col-md-3 offset-md-1">
 
-      <%= f.label :email %>
-      <%= f.email_field :email %>
+      <h4 class="bg-dark text-white text-center p-3">Update your profile</h4>
 
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+    </div>
+  </div>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
 
-      <%= f.submit "Save changes", class: "btn btn-primary" %>
-    <% end %>
+      <%= form_with model:@owner do |f| %>
+      <table class="table table-borderless">
+
+        <tr>
+          <div class="form-group">
+            <th>NAME</th>
+              <td><%= f.text_field :name %></td>
+          </div>
+        </tr>
+
+        <tr>
+          <div class="form-group">
+            <th>EMAIL</th>
+              <td><%= f.email_field :email %></td>
+          </div>
+        </tr>
+
+        <tr>
+          <div class="form-group">
+            <th>PASSWORD</th>
+              <td><%= f.password_field :password %></td>
+          </div>
+        </tr>
+
+        <tr>
+          <div class="form-group">
+            <th>PASSWORD_CONFIRAMATION, "Confirmation"</th>
+              <td><%= f.password_field :password_confirmation %></td>
+          </div>
+        </tr>
+
+        <tr>
+          <div class="form-group">
+            <th></th>
+              <td><%= f.submit "Save changes", class: "btn btn-primary" %></td>
+          </div>
+        </tr>
+
+      </table>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+
+
+

@@ -1,4 +1,27 @@
-<h2>新着情報</h2>
-<%= @post.title %>
-<%= @post.detail %>
-<%= @post.image %>
+<div class="container">
+      <div class="row">
+        <!-- 新着情報一覧 -->
+        <div class="col offset-2">
+
+          <div class="row mb-3">
+            <div class="col-md-4 text-cnter">
+              <h2 class="bg-dark text-white text-center p-2">
+                <%= @post.title %>
+              </h2>
+            </div>
+          </div>
+
+          <%= attachment_image_tag @shop, :image, :fill, 100, 100, format: 'jpeg' %>
+
+          <div class="row">
+            <div class='col-md-8'>
+              <p class="p-2">
+                <%= @post.detail %>
+              </p>
+            </div>
+          </div>
+
+      </div>
+    </div>
+
+

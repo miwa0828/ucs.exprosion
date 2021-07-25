@@ -1,38 +1,10 @@
     <div class="container">
       <div class="row">
         <!-- 新着情報一覧 -->
-        <div class="col-md-4">
-
-
-            <div class="row mb-3">
-              <div class="col-md-6">
-                <h2 class="bg-dark text-white text-center p-2">新着情報</h2>
-              </div>
-            </div>
-
-          <div class="row">
-            <div class="col-md-7">
-              <table class="table border-bottom">
-                  <tr>
-                    <th class="text-center">title</th>
-                  </tr>
-                <% @post.each do |post|%>
-                  <tbody>
-                    <tr>
-                      <td><%= post.title %><td>
-                      <td><%= link_to "more", post_path(post.id) %></td>
-                    </tr>
-                  </tbody>
-                <% end %>
-              </table>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-8">
+        <div class="col offset-2">
 
           <div class="row mb-3">
-            <div class="col-md-4">
+            <div class="col-md-4 text-cnter">
               <h2 class="bg-dark text-white text-center p-2">
                 <%= @shop.name %>
               </h2>
@@ -50,8 +22,8 @@
             </div>
           </div>
 
-          <div class='row'>
-            <div class='col-md-9'>
+          <div class="row">
+            <div class="col-md-10 text-center">
               <table class="table table-bordered">
                 <tbody>
                     <tr>
@@ -84,18 +56,5 @@
 
 
 
-
-
-                      <td>店舗名</td>
-                      <td><%= @shop.name %></td>
-                    </tr>
-                    <tr>
-                      <td>ショップ紹介</td>
-                      <td><%= @shop.detail %></td>
-                    </tr>
-                    <tr>
-                      <td>店舗画像</td>
-                      <td><%= @shop.image %></td>
-                    </tr>
 
 

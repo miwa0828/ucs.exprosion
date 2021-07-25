@@ -17,3 +17,15 @@
  @import "bootstrap";
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
+
+ .main-container {
+  background-image: url("photo-1445205170230-053b83016050");
+  height: 400px;
+  background-size: cover;
+}
+
+ .body {
+  background-image: url("clark-street-mercantile-qnKhZJPKFD8-unsplash");
+  background-color:rgba(255,255,255,0.8);
+  background-size: cover;
+ }

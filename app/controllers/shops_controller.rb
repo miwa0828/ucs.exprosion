@@ -1,5 +1,5 @@
 class ShopsController < ApplicationController
-  before_action :authenticate_owner!, except: [:show]
+  before_action :authenticate_owner!, except: [:index, :show, :search]
 
   def index
     @shop = Shop.all
@@ -8,7 +8,6 @@ class ShopsController < ApplicationController
 
   def show
     @shop = Shop.find(params[:id])
-    @post = Post.all
   end
 
   def new
@@ -38,8 +37,14 @@ class ShopsController < ApplicationController
     redirect_to shops_path
   end
 
+  def search
+    @shops = Shop.search(params[:keyword])
+    @keyword = params[:keyword]
+    render "index"
+  end
+
   private
   def shop_params
-    params.require(:shop).permit(:name, :detail, :address, :phone_number, :image, :url)
+    params.require(:shop).permit(:name, :detail, :address, :open_time, :close_time, :phone_number, :image, :url)
   end
 end

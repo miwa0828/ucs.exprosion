@@ -4,10 +4,11 @@ class CreateShops < ActiveRecord::Migration[5.2]
       t.string :name
       t.text :detail
       t.string :address
-      t.string :image
-      t.time :open_time
-      t.time :close_time
+      t.string :image_id
+      t.string :open_time
+      t.string :close_time
       t.integer :phone_number
+      t.integer :owner_id
       t.text :url
       t.datetime :created_at
       t.datetime :update_at
