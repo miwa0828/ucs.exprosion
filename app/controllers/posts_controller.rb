@@ -18,10 +18,13 @@
     end
 
     def create
-      post = Post.new(post_params)
-      post.owner_id = current_owner.id
-      post.save
+      @post = Post.new(post_params)
+      @post.owner_id = current_owner.id
+     if @post.save
       redirect_to shops_path
+     else
+      render :new
+     end
     end
 
     def update
