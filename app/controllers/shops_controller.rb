@@ -19,10 +19,13 @@ class ShopsController < ApplicationController
   end
 
   def create
-    shop = Shop.new(shop_params)
-    shop.owner_id = current_owner.id
-    shop.save
-    redirect_to shops_path
+    @shop = Shop.new(shop_params)
+    @shop.owner_id = current_owner.id
+    if @shop.save
+      redirect_to shops_path
+    else
+      render :new
+    end
   end
 
   def update
@@ -40,7 +43,7 @@ class ShopsController < ApplicationController
   def search
     @shops = Shop.search(params[:keyword])
     @keyword = params[:keyword]
-    render "index"
+    render "search/index"
   end
 
   private

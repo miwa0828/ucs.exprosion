@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_25_043844) do
+ActiveRecord::Schema.define(version: 2021_07_25_074745) do
 
   create_table "owners", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -53,6 +53,8 @@ ActiveRecord::Schema.define(version: 2021_07_25_043844) do
     t.datetime "created_at", null: false
     t.datetime "update_at"
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
   end
 
 end
