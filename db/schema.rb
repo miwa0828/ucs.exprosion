@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_15_033856) do
+ActiveRecord::Schema.define(version: 2021_07_25_043844) do
 
   create_table "owners", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -29,10 +29,15 @@ ActiveRecord::Schema.define(version: 2021_07_15_033856) do
     t.string "title"
     t.text "detail"
     t.string "image_id"
+    t.integer "owner_id"
     t.datetime "created_at", null: false
     t.datetime "update_at"
     t.datetime "updated_at", null: false
-    t.integer "owner_id"
+  end
+
+  create_table "searches", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "shops", force: :cascade do |t|
@@ -40,14 +45,14 @@ ActiveRecord::Schema.define(version: 2021_07_15_033856) do
     t.text "detail"
     t.string "address"
     t.string "image_id"
-    t.time "open_time"
-    t.time "close_time"
+    t.string "open_time"
+    t.string "close_time"
     t.integer "phone_number"
+    t.integer "owner_id"
     t.text "url"
     t.datetime "created_at", null: false
     t.datetime "update_at"
     t.datetime "updated_at", null: false
-    t.integer "owner_id"
   end
 
 end

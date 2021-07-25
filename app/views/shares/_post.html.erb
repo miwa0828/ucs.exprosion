@@ -1,22 +1,22 @@
-    <div class='col-md-4' >
-      <div class='row'>
-        <div class='col-md-9'>
-              <table class='table border-bottom'>
+    <div class="col-md-4 offset-1" >
+      <div class="row">
+        <div class="col-md-9">
+              <table class="table border-bottom">
                 <thead class="thead-dark">
                   <tr>
-                    <th class='text-center'>新着情報</th>
+                    <th class="text-center">新着情報</th>
                   </tr>
                 </thead>
 
-                <% post.each do |post|%>
+                <% @post.each do |post|%>
                   <tbody>
                     <tr>
-                      <td><%= post.title %><td>
-                      <td><%= link_to 'more', post_path(post.id) %></td>
+                      <td><%= link_to post.title, post_path(post.id) %></td>
                     </tr>
                   </tbody>
                 <% end %>
               </table>
+              <%= link_to "一覧を見る", posts_path %>
         </div>
       </div>
     </div>

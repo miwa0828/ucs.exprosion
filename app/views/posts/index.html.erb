@@ -1,4 +1,29 @@
-<h2>新着情報</h2>
-<% post.each do |post|%>
-  <%= @post.title %>
-<% end %>
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-3 offset-md-2">
+
+      <h4 class="bg-dark text-white text-center p-3">新着情報一覧</h4>
+
+    </div>
+  </div>
+
+    <div class="row">
+      <div class="col-md-10 offset-md-2">
+
+        <% @posts.each do |post|%>
+        <table class="table table-border-bottom">
+          <tr>
+            <td><%= link_to post.title, post_path(post.id) %></td>
+          </tr>
+        </table>
+        <% end %>
+      </div>
+    </div>
+
+</div>
+
+
+
+
+

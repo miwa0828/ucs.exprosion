@@ -1,12 +1,53 @@
-<h2>新着情報投稿<h2>
+<div class="container">
 
-  <%= form_with model:@post, url: posts_path, local:true do |f| %>
-    <%= f.label :title,'タイトル名' %>
-      <%= f.text_field :title %>
-    <%= f.label :detail,'投稿詳細' %>
-      <%= f.text_field :detail %>
-    <%= f.label :image,'イメージ画像' %>
-      <%= f.attachment_field :image %>
-    <%= f.submit '新規登録' %>
-    
-  <% end %>
+  <div class="row">
+    <div class="col-md-3 offset-md-3">
+
+      <h4 class="bg-dark text-white text-center p-3">ショップ新規登録</h4>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-10 offset-md-3">
+
+      <%= form_with model:@posts, url: posts_path, local:true do |f| %>
+      <table class="table table-borderless">
+
+        <tr>
+          <div class="form-group">
+            <th>タイトル</th>
+              <td><%= f.text_field :title %></td>
+          </div>
+        </tr>
+
+        <tr>
+          <div class="form-group">
+            <th>投稿詳細</th>
+              <td><%= f.text_field :detail %></td>
+          </div>
+        </tr>
+
+        <tr>
+          <div class="form-group">
+            <th>イメージ画像</th>
+              <td><%= f.attachment_field :image %></td>
+          </div>
+        </tr>
+
+        <tr>
+          <div class="form-group">
+            <th>新規登録</th>
+              <td><%= f.submit "Save changes" %></td>
+          </div>
+        </tr>
+
+      </table>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+
+
+

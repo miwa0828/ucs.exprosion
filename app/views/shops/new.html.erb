@@ -1,21 +1,87 @@
-<h2>ショップ登録</h2>
+<div class="container">
 
-<%= form_with model:@shop, url: shops_path, local:true do |f| %>
-    <%= f.label :name,'ショップ名' %>
-      <%= f.text_field :name %>
-    <%= f.label :detail,'ショップ詳細' %>
-      <%= f.text_field :detail %>
-    <%= f.label :address,'住所' %>
-      <%= f.text_field :address %>
-    <%= f.label :open_time,'営業開始時間' %>
-      <%= f.text_field :open_time %>
-    <%= f.label :close_time,'営業終了時間' %>
-      <%= f.text_field :close_time %>
-    <%= f.label :phone_number,'電話番号' %>
-      <%= f.text_field :phone_number %>
-    <%= f.label :image,'イメージ画像' %>
-      <%= f.attachment_field :image %>
-    <%= f.label :url,'URL' %>
-      <%= f.text_field :url %>
-    <%= f.submit '新規登録' %>
-<% end %>
+  <div class="row">
+    <div class="col-md-3 offset-md-3">
+
+      <h4 class="bg-dark text-white text-center p-3">ショップ新規登録</h4>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-10 offset-md-3">
+
+      <%= form_with model:@shop, url: shops_path, local:true do |f| %>
+      <table class="table table-borderless">
+
+        <tr>
+          <div class="form-group">
+            <th>店名</th>
+              <td><%= f.text_field :name %></td>
+          </div>
+        </tr>
+
+        <tr>
+          <div class="form-group">
+            <th>ショップ詳細</th>
+              <td><%= f.text_field :detail %></td>
+          </div>
+        </tr>
+
+        <tr>
+          <div class="form-group">
+            <th>住所</th>
+              <td><%= f.text_field :address %></td>
+          </div>
+        </tr>
+
+        <tr>
+          <div class="form-group">
+            <th>営業開始時間</th>
+              <td><%= f.text_field :open_time %></td>
+          </div>
+        </tr>
+
+        <tr>
+          <div class="form-group">
+            <th>営業終了時間</th>
+              <td><%= f.text_field :close_time %></td>
+          </div>
+        </tr>
+
+        <tr>
+          <div class="form-group">
+            <th>電話番号</th>
+              <td><%= f.text_field :phone_number %></td>
+          </div>
+        </tr>
+
+        <tr>
+          <div class="form-group">
+            <th>イメージ画像</th>
+              <td><%= f.attachment_field :image %></td>
+          </div>
+        </tr>
+
+        <tr>
+          <div class="form-group">
+            <th>URL</th>
+              <td><%= f.text_field :url %></td>
+          </div>
+        </tr>
+
+        <tr>
+          <div class="form-group">
+            <th></th>
+              <td><%= f.submit "新規登録" %></td>
+          </div>
+        </tr>
+
+      </table>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+
+
