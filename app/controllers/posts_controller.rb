@@ -9,7 +9,7 @@
     end
 
     def new
-      @posts = Post.new
+      @post = Post.new
 
     end
 

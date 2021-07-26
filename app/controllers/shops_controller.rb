@@ -2,8 +2,8 @@ class ShopsController < ApplicationController
   before_action :authenticate_owner!, except: [:index, :show, :search]
 
   def index
-    @shop = Shop.all
-    @post = Post.all
+    @shop = current_owner.shops
+    @post = current_owner.posts
   end
 
   def show
@@ -15,7 +15,7 @@ class ShopsController < ApplicationController
   end
 
   def edit
-    @shop = Shop.find_by(owner_id: params[:id])
+    @shop = Shop.find(params[:id])
   end
 
   def create
@@ -29,7 +29,7 @@ class ShopsController < ApplicationController
   end
 
   def update
-    shop = Shop.find(params[:id])
+    shop = current_owner.shop.find(params[:id])
     shop.update(shop_params)
     redirect_to shops_path
   end

@@ -2,11 +2,11 @@
 
     <% if @shop.errors.any? %>
       <%= @shop.errors.count %>件のエラーが発生しました
-      <% @shop.errors.full_messages.each do |shop| %>
+      <% @shop.errors.full_messages.each do |message| %>
         <%= message %>
       <% end %>
     <% end %>
-s
+
   <div class="row">
     <div class="col-md-3 offset-md-3">
 
