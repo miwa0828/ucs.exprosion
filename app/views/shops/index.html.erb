@@ -5,10 +5,10 @@
           <div class = "row">
 
                 <div class="col-md-10">
-                  <table class='table border-bottom'>
+                  <table class="table border-bottom">
                     <thead class="thead-dark">
                       <tr>
-                        <th class='text-center'>新着情報一覧</th>
+                        <th class="text-center">新着情報一覧</th>
                       </tr>
                     </thead>
                 </div>
@@ -16,9 +16,10 @@
                 <% @post.each do |post|%>
                   <tbody>
                     <tr>
+                      <td><%= attachment_image_tag post, :image, :fill, 100, 100, format: "jpeg" %></td>
                       <td><%= post.title %><td>
                       <td><%= link_to "編集", edit_post_path(post.id) %></td>
-                      <td><%= link_to '削除する', post_path(post.id), method: :delete,'data-confirm' => '本当に削除しますか？'  %></td>
+                      <td><%= link_to "削除する", post_path(post.id), method: :delete,"data-confirm" => "本当に削除しますか？"  %></td>
                     </tr>
                   </tbody>
                 <% end %>
