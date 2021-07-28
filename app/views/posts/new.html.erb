@@ -1,22 +1,25 @@
 <div class="container">
 
-　<% if @post.errors.any? %>
-    <%= @post.errors.count %>件のエラーが発生しました
-    <% @post.errors.full_messages.each do |message| %>
-      <%= message %>
-    <% end %>
-  <% end %>
-
   <div class="row">
-    <div class="col-md-3 offset-md-3">
+      <div class="col-md-9 offset-md-2">
+        <% if @post.errors.any? %>
+          <%= @post.errors.count %>件のエラーが発生しました
+          <% @post.errors.full_messages.each do |message| %>
+            <%= message %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
 
-      <h4 class="bg-dark text-white text-center p-3">新着情報新規投稿</h4>
+    <div class="col-md-3 offset-md-2 pt-5 mb-5">
+
+      <h4 class="bg-dark text-white text-center p-3">新着情報投稿</h4>
 
     </div>
-  </div>
+
 
   <div class="row">
-    <div class="col-md-10 offset-md-3">
+    <div class="col-md-10 offset-md-2">
 
       <%= form_with model:@post, url: posts_path, local:true do |f| %>
       <table class="table table-borderless">
@@ -24,14 +27,14 @@
         <tr>
           <div class="form-group">
             <th>タイトル</th>
-              <td><%= f.text_field :title %></td>
+              <td><%= f.text_field :title,size: 40 %></td>
           </div>
         </tr>
 
         <tr>
           <div class="form-group">
             <th>投稿詳細</th>
-              <td><%= f.text_field :detail %></td>
+              <td><%= f.text_area :detail,size: "40x20" %></td>
           </div>
         </tr>
 
@@ -44,8 +47,15 @@
 
         <tr>
           <div class="form-group">
+            <th>店名</th>
+              <td><%= f.text_field :name,size: 40 %></td>
+          </div>
+        </tr>
+
+        <tr>
+          <div class="form-group">
             <th>新規登録</th>
-              <td><%= f.submit "Save changes" %></td>
+              <td><%= f.submit "新規投稿", class:"btn btn-outline-primary" %></td>
           </div>
         </tr>
 

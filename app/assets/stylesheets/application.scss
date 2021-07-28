@@ -18,14 +18,55 @@
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
 
- .main-container {
+ header {
   background-image: url("photo-1445205170230-053b83016050");
-  height: 400px;
+  height: 300px;
   background-size: cover;
-}
-
-  .body {
-  background-image: url("clark-street-mercantile-qnKhZJPKFD8-unsplash");
-  background-color: rgba(255,255,255,0.8);
-  background-size: cover;
+  position: relative;
  }
+
+ .header-title {
+  font-size: 30px;
+  text-decoration: none;
+  text-align:left;
+  color:#CCCCCC;
+  font-family: "Hiragino Kaku Gothic ProN","Hiragino Sans","Arial"sans-serif;
+ }
+
+ .header-sub-title{
+  font-size: 17px;
+  padding-left: 15px;
+  font-family: "Hiragino Kaku Gothic ProN","Hiragino Sans","Arial"sans-serif;
+ }
+
+ .header-center {
+  position: absolute;
+    top: calc(50% - 68px);
+    /* left: 50%; */
+    width: 100%;
+    height: 100%;
+    /* transform: translate(-50%); */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: whitesmoke;
+  font-family: "Hiragino Kaku Gothic ProN","Hiragino Sans","Arial"sans-serif;
+ }
+
+ .header-center-top{
+  font-size: 20px;
+  color: whitesmoke;
+ }
+
+ .header-center-bottom {
+ font-size: 50px;
+ color: whitesmoke;
+ }
+
+ body {
+  background-image: image-url("clark-street-mercantile-qnKhZJPKFD8-unsplash");
+  background-size: cover;
+  background-color: rgba(255,255,255,0.8);
+  background-blend-mode: lighten;
+ }
+

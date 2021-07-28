@@ -21,8 +21,8 @@ class Owners::RegistrationsController < Devise::RegistrationsController
 
   # PUT /resource
   # def update
-  #   super
-  # end
+     #super
+   #end
 
   # DELETE /resource
   # def destroy

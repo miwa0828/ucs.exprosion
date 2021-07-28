@@ -3,7 +3,7 @@
         <!-- 新着情報一覧 -->
         <div class="col offset-2">
 
-          <div class="row mb-3">
+          <div class="row pt-5 mb-5">
             <div class="col-md-4 text-cnter">
               <h2 class="bg-dark text-white text-center p-2">
                 <%= @shop.name %>
@@ -11,9 +11,9 @@
             </div>
           </div>
 
-          <%= attachment_image_tag @shop, :image, :fill, 100, 100, format: 'jpeg' %>
+          <%= attachment_image_tag @shop, :image, :fill, 400, 300, format: 'jpeg' %>
 
-          <h5>○ショップ紹介</h5>
+          <h5 class="pt-5">○ショップ紹介</h5>
           <div class="row">
             <div class='col-md-8'>
               <p class="p-2">
@@ -44,14 +44,15 @@
                     </tr>
                     <tr>
                       <th scope="row">HP</th>
-                      <td><%= @shop.phone_number %></td>
+                      <td><%= @shop.url %></td>
                     </tr>
                 </tbody>
               </table>
+              <%= render "shops/map" %>
             </div>
           </div>
 
-        <%= render "shops/map" %>
+
 
   </div>
 </div>

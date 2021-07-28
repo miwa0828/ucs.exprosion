@@ -1,7 +1,7 @@
 <div class="container">
 
   <div class="row">
-    <div class="col-md-3 offset-md-3">
+    <div class="col-md-3 offset-md-2">
 
       <h4 class="bg-dark text-white text-center p-3">新着情報編集</h4>
 
@@ -9,7 +9,7 @@
   </div>
 
   <div class="row">
-    <div class="col-md-10 offset-md-3">
+    <div class="col-md-10 offset-md-2">
 
       <%= form_with model:@post, url: post_path(@post.id), local:true do |f| %>
       <table class="table table-borderless">
@@ -17,14 +17,14 @@
         <tr>
           <div class="form-group">
             <th>タイトル</th>
-              <td><%= f.text_field :title %></td>
+              <td><%= f.text_field :title,size: 40 %></td>
           </div>
         </tr>
 
         <tr>
           <div class="form-group">
             <th>投稿詳細</th>
-              <td><%= f.text_field :detail %></td>
+              <td><%= f.text_area :detail,size: "40x20" %></td>
           </div>
         </tr>
 
@@ -37,8 +37,15 @@
 
         <tr>
           <div class="form-group">
+            <th>店名</th>
+              <td><%= f.text_field :name,size: 40 %></td>
+          </div>
+        </tr>
+
+        <tr>
+          <div class="form-group">
             <th></th>
-              <td><%= f.submit "変更を保存" %></td>
+              <td><%= f.submit "変更を保存",class:"btn btn-outline-primary" %></td>
           </div>
         </tr>
 

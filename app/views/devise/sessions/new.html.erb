@@ -1,7 +1,7 @@
 <div class="container">
 
-  <div class="row">
-    <div class="col-md-3 offset-md-3">
+  <div class="row pt-3">
+    <div class="col-md-3 offset-md-2">
 
       <h4 class="bg-dark text-white text-center p-3">Log in</h4>
 
@@ -9,7 +9,7 @@
   </div>
 
   <div class="row">
-    <div class="col-md-10 offset-md-3">
+    <div class="col-md-10 offset-md-2">
       <%= form_with model: @owner, url: owner_session_path, local: true do |f| %>
        <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -41,7 +41,7 @@
 
         <div class="actions">
           <th></th>
-          <td><%= f.submit "Log in" %></td>
+          <td><%= f.submit "Log in", class:"btn btn-outline-primary" %></td>
         </div>
       </table>
       <% end %>
