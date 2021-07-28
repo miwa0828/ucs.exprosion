@@ -1,9 +1,9 @@
 class ShopsController < ApplicationController
-  before_action :authenticate_owner!, except: [:index, :show, :search]
+  before_action :authenticate_owner!, except: [:show, :search]
 
   def index
-    @shop = current_owner.shops
-    @post = current_owner.posts
+    @shop = current_owner.shops.page(params[:page]).reverse_order
+    @post = current_owner.posts.page(params[:page]).reverse_order
   end
 
   def show
@@ -29,7 +29,7 @@ class ShopsController < ApplicationController
   end
 
   def update
-    shop = current_owner.shop.find(params[:id])
+    shop = current_owner.shops.find(params[:id])
     shop.update(shop_params)
     redirect_to shops_path
   end

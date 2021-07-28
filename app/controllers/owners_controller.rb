@@ -1,5 +1,5 @@
 class OwnersController < ApplicationController
-  #before_action :correct_user, only: [:edit, :update]
+  #before_action :current_owner, only: [:edit, :update]
   def edit
     @owner = Owner.find(params[:id])
   end
@@ -7,7 +7,8 @@ class OwnersController < ApplicationController
   def update
     @owner = Owner.find(params[:id])
     @owner.update(owner_params)
-    redirect_to new_shop_path
+    sign_in(@owner, bypass: true)
+    redirect_to shops_path
   end
 
   private

@@ -1,7 +1,7 @@
   class PostsController < ApplicationController
-
+    before_action :authenticate_owner!, except: [:index, :show]
     def index
-      @posts = Post.all
+      @posts = Post.page(params[:page]).reverse_order
     end
 
     def show
@@ -41,6 +41,6 @@
 
   private
     def post_params
-      params.require(:post).permit(:image, :title, :detail)
+      params.require(:post).permit(:image, :title, :detail, :name)
     end
   end
