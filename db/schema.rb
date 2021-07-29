@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2021_07_28_074911) do
     t.string "image_id"
     t.string "open_time"
     t.string "close_time"
-    t.string "phone_number"
+    t.string "phone_number", limit: 20
     t.integer "owner_id"
     t.text "url"
     t.datetime "created_at", null: false
