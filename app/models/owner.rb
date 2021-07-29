@@ -7,5 +7,6 @@ class Owner < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :shops, dependent: :destroy
 
+  #バリデーション
   validates :name, presence: true, length: { minimum: 2 }
 end

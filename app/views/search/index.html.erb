@@ -2,14 +2,9 @@
   <div class="row pt-5">
 
     <div class="col-md-3 offset-md-2">
-
       <h4 class="bg-dark text-white text-center p-3">検索結果</h4>
-
     </div>
-  </div>
 
-
-  <div class="row">
     <div class="col-md-7 offset-md-2">
 
       <% @shops.each do |shop| %>
@@ -19,9 +14,10 @@
         <td class="align-middle"><%= shop.address %></td>
       </table>
       <% end %>
+    
     </div>
+  
   </div>
-
 </div>
 
 

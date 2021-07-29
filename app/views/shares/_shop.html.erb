@@ -1,26 +1,22 @@
 <div class="col-md-7">
-  <div classs = "row">
-    <div class="col">
+
       <table class="table border-bottom">
         <thead class="thead-dark">
             <tr>
-              <th class="text-center">古着屋</th>
+              <th colspan="5"class="text-center">古着屋</th>
             </tr>
         </thead>
-
+                <tbody>
                 <% @shop.each do |shop| %>
-                  <tbody>
                     <tr>
                       <td><%= attachment_image_tag shop, :image, :fill, 100, 100, format: "jpeg" %></td>
                       <td class="align-middle"><%= shop.name %><td>
                       <td class="align-middle"><%= shop.address %></td>
                       <td class="align-middle"><%= link_to "more", shop_path(shop.id), class:"btn btn-outline-primary" %></td>
                     </tr>
-                  </tbody>
                 <% end %>
+                </tbody>
       </table>
       <%= paginate @shop %>
 
-    </div>
-  </div>
 </div>

@@ -1,14 +1,14 @@
 <div class="container">
 
   <div class="row pt-3">
+
     <div class="col-md-3 offset-md-2">
-
       <h4 class="bg-dark text-white text-center p-3">Sign up</h4>
-
     </div>
-  </div>
 
-  <div class="row">
+
+     <!--フォーム-->
+    
     <div class="col-md-10 offset-md-2">
       <%= form_with model: @owner, url: owner_registration_path, id: "new_owner", class: "new_owner", local: true do |f| %>
        <%= render "devise/shared/error_messages", resource: resource %>
@@ -35,7 +35,7 @@
                 <% if @minimum_password_length %>
               <em>(<%= @minimum_password_length %> characters minimum)</em>
               <% end %><br />
-              </th>
+            </th>
             <td><%= f.password_field :password, autocomplete: "new-password" %></td>
           <div>
         </tr>
@@ -55,8 +55,8 @@
       <% end %>
       <%= render "devise/shared/links" %>
     </div>
-  </div>
 
+  </div>
 </div>
 
 

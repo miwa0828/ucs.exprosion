@@ -41,15 +41,13 @@
 
  .header-center {
   position: absolute;
-    top: calc(50% - 68px);
-    /* left: 50%; */
-    width: 100%;
-    height: 100%;
-    /* transform: translate(-50%); */
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    color: whitesmoke;
+  top: calc(50% - 68px);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: whitesmoke;
   font-family: "Hiragino Kaku Gothic ProN","Hiragino Sans","Arial"sans-serif;
  }
 
@@ -59,8 +57,8 @@
  }
 
  .header-center-bottom {
- font-size: 50px;
- color: whitesmoke;
+  font-size: 50px;
+  color: whitesmoke;
  }
 
  body {
