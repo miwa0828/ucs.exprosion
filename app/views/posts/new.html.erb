@@ -1,6 +1,6 @@
 <div class="container">
-
   <div class="row">
+
       <div class="col-md-9 offset-md-2">
         <% if @post.errors.any? %>
           <%= @post.errors.count %>件のエラーが発生しました
@@ -9,16 +9,13 @@
           <% end %>
         <% end %>
       </div>
-    </div>
 
+       <!--タイトル-->
     <div class="col-md-3 offset-md-2 pt-5 mb-5">
-
       <h4 class="bg-dark text-white text-center p-3">新着情報投稿</h4>
-
     </div>
 
-
-  <div class="row">
+       <!--新着情報投稿フォーム-->
     <div class="col-md-10 offset-md-2">
 
       <%= form_with model:@post, url: posts_path, local:true do |f| %>
@@ -62,8 +59,8 @@
       </table>
       <% end %>
     </div>
-  </div>
 
+  </div>
 </div>
 
 

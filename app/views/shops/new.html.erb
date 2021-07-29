@@ -1,6 +1,6 @@
 <div class="container">
-
   <div class="row">
+
     <div class="col-md-10 offset-md-2">
       <% if @shop.errors.any? %>
         <%= @shop.errors.count %>件のエラーが発生しました
@@ -9,18 +9,14 @@
         <% end %>
       <% end %>
     </div>
-  </div>
 
 
-
+     <!--タイトル-->
     <div class="col-md-3 offset-md-2  pt-5 mb-5">
-
       <h4 class="bg-dark text-white text-center p-3">ショップ新規登録</h4>
-
     </div>
 
-
-
+      <!--ショップ登録欄-->
     <div class="col-md-10 offset-md-2">
 
       <%= form_with model:@shop, url: shops_path, local:true do |f| %>
@@ -93,7 +89,7 @@
       <% end %>
     </div>
 
-
+  </div>
 </div>
 
 

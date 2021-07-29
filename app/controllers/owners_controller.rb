@@ -1,5 +1,5 @@
 class OwnersController < ApplicationController
-  #before_action :current_owner, only: [:edit, :update]
+
   def edit
     @owner = Owner.find(params[:id])
   end

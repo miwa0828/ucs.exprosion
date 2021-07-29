@@ -1,39 +1,39 @@
-<nav class="navbar navbar-expand-lg">
-  <div class="container">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
 
-    <%= link_to root_path, class:"header-title" do %>
-      <div>UCS EXPROSION</div>
-      <div class="header-sub-title">〜古着を探す旅〜</div>
-    <% end %>
-
-
-
-      <!--オーナーログイン時-->
-      <% if owner_signed_in? %>
-      <ul class="navbar-nav">
-        <li class="nav-item"><%= link_to "HOME", shops_path, class:"nav-link text-light" %></li>
-        <li class="nav-item"><%= link_to "PROFILE", edit_owner_path(current_owner.id), class:"nav-link text-light" %></li>
-        <li class="nav-item"><%= link_to "SHOP", new_shop_path, class:"nav-link text-light" %></li>
-        <li class="nav-item"><%= link_to "POST", new_post_path, class:"nav-link text-light" %></li>
-        <li class="nav-item"><%= link_to "LOGOUT", destroy_owner_session_path, method: :delete, class:"nav-link text-light" %></li>
-
-      </ul>
-
-
-      <!--顧客未ログイン時-->
-      <% else %>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><%= link_to "HOME", root_path, class:"nav-link text-light" %></li>
-        <li class="nav-item"><%= link_to "ABOUT", about_path, class:"nav-link text-light" %></li>
-        <li class="nav-item"><%= link_to "SIGN UP", new_owner_registration_path, class:"nav-link text-light" %></li>
-        <li class="nav-item"><%= link_to "LOGIN", new_owner_session_path, class:"nav-link text-light" %></li>
-
+      <%= link_to root_path, class:"header-title" do %>
+        <div>UCS EXPROSION</div>
+        <div class="header-sub-title">〜古着を探す旅〜</div>
       <% end %>
-      </ul>
 
 
-  </div>
-</nav>
+
+        <!--オーナーログイン時-->
+        <% if owner_signed_in? %>
+        <ul class="navbar-nav">
+          <li class="nav-item"><%= link_to "HOME", shops_path, class:"nav-link text-light" %></li>
+          <li class="nav-item"><%= link_to "PROFILE", edit_owner_path(current_owner.id), class:"nav-link text-light" %></li>
+          <li class="nav-item"><%= link_to "SHOP", new_shop_path, class:"nav-link text-light" %></li>
+          <li class="nav-item"><%= link_to "POST", new_post_path, class:"nav-link text-light" %></li>
+          <li class="nav-item"><%= link_to "LOGOUT", destroy_owner_session_path, method: :delete, class:"nav-link text-light" %></li>
+
+        </ul>
+
+
+        <!--顧客未ログイン時-->
+        <% else %>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><%= link_to "HOME", root_path, class:"nav-link text-light" %></li>
+          <li class="nav-item"><%= link_to "ABOUT", about_path, class:"nav-link text-light" %></li>
+          <li class="nav-item"><%= link_to "SIGN UP", new_owner_registration_path, class:"nav-link text-light" %></li>
+          <li class="nav-item"><%= link_to "LOGIN", new_owner_session_path, class:"nav-link text-light" %></li>
+
+        <% end %>
+        </ul>
+
+
+    </div>
+  </nav>
 
     <div class="header-center">
       <div class="header-center-top">新たな出会いと発見を</div>

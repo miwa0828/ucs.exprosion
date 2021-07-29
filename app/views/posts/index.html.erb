@@ -1,14 +1,10 @@
 <div class="container">
-
   <div class="row">
+
     <div class="col-md-3 offset-md-2 pt-5 mb-3">
-
-      <h4 class="bg-dark text-white text-center p-3">新着情報一覧</h4>
-
+      <h4 colspan="3" class="bg-dark text-white text-center p-3">新着情報一覧</h4>
     </div>
-  </div>
 
-    <div class="row">
       <div class="col-md-8 offset-md-2">
 
         <% @posts.each do |post|%>
@@ -20,9 +16,10 @@
         </table>
         <% end %>
         <%= paginate @posts %>
-      </div>
-    </div>
 
+      </div>
+
+  </div>
 </div>
 
 

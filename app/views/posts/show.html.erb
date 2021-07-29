@@ -1,28 +1,37 @@
-<div class="container">
-      <div class="row">
+  <div class="container">
+    <div class="row">
+
         <!-- 新着情報一覧 -->
         <div class="col offset-2">
 
-          <div class="row pt-5 mb-5">
-            <div class="col-md-4 text-cnter">
+          <div class="pt-5 mb-5">
+            <div class="col-md-8 offset-1 text-cnter">
               <h2 class="bg-dark text-white text-center p-2">
                 <%= @post.title %>
               </h2>
             </div>
           </div>
 
-          <%= attachment_image_tag @post, :image, :fill, 400, 300, format: 'jpeg' %>
+          <div class="offset-1", style="padding-left:15px;">
+            <%= attachment_image_tag @post, :image, :fill, 400, 300, format: "jpeg" %>
+          </div>
 
-          <div class="row pt-5">
-            <div class='col-md-8'>
+          <div class="pt-5">
+            <div class="col-md-8 offset-1">
               <p class="p-2">
                 <%= @post.detail %>
               </p>
-              <p><%= @post.name %></p>
+              <table class="table table-border-bottom">
+                <tr>
+                  <th>店名</th>
+                  <td><%= @post.name %></td>
+                <tr>
+              </table>
             </div>
           </div>
+        </div>
 
-      </div>
     </div>
+  </div>
 
 

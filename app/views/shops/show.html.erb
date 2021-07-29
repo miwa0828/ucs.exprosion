@@ -1,9 +1,10 @@
-    <div class="container">
-      <div class="row">
-        <!-- 新着情報一覧 -->
+  <div class="container">
+    <div class="row">
+
+        <!-- ショップ詳細 -->
         <div class="col offset-2">
 
-          <div class="row pt-5 mb-5">
+          <div class="pt-5 mb-5">
             <div class="col-md-4 text-cnter">
               <h2 class="bg-dark text-white text-center p-2">
                 <%= @shop.name %>
@@ -14,15 +15,13 @@
           <%= attachment_image_tag @shop, :image, :fill, 400, 300, format: 'jpeg' %>
 
           <h5 class="pt-5">○ショップ紹介</h5>
-          <div class="row">
-            <div class='col-md-8'>
+
+            <div class="col-md-8">
               <p class="p-2">
                 <%= @shop.detail %>
               </p>
             </div>
-          </div>
 
-          <div class="row">
             <div class="col-md-10 text-center">
               <table class="table table-bordered">
                 <tbody>
@@ -50,12 +49,10 @@
               </table>
               <%= render "shops/map" %>
             </div>
-          </div>
+        </div>
 
-
-
+    </div>
   </div>
-</div>
 
 
 

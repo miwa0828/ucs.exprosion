@@ -9,16 +9,16 @@
     <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
   </head>
 
-  <body>
+
       <!--ヘッダー-->
     <header>
       <%= render "layouts/header" %>
     </header>
-
+    <body>
     <%= yield %>
       <!--フッター-->
 
       <%= render "layouts/footer" %>
 
-  </body>
+    </body>
 </html>
